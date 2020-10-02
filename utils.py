@@ -7,6 +7,7 @@ from .liqpay import LiqPay
 
 
 def get_liqpay_context(params): 
+  print('sw_liqpay.get_liqpay_context()')
   config    = LiqpayConfig.get_solo()
   if config.sandbox_mode:
     public  = config.liqpay_sandbox_public_key
@@ -20,8 +21,7 @@ def get_liqpay_context(params):
 # from django.http import JsonResponse 
 
 def get_response(request):
-  # if request.method == 'GET':
-  #   return JsonResponse({'Hello':'Hello'})
+  print('sw_liqpay.get_response()')
   data      = request.POST.get('data')
   signature = request.POST.get('signature')
   config    = LiqpayConfig.get_solo()
@@ -39,8 +39,9 @@ def get_response(request):
 
 
 def create_liqpay_transaction(request):
-  print('!!!create_liqpay_transaction!!!')
+  print('sw_liqpay.create_liqpay_transaction()')
   response = get_response(request)
+  print(response)
   status   = response.get('status', '')
   if status == 'failure':
     return redirect('/')
