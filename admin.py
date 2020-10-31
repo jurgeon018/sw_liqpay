@@ -5,7 +5,7 @@ from django.contrib import admin
 from .models import *
 from .resources import *
 
-from box.core.sw_solo.admin import SingletonModelAdmin
+from sw_utils.sw_solo.admin import SingletonModelAdmin
 
 
 @admin.register(LiqpayTransaction)

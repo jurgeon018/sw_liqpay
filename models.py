@@ -1,7 +1,7 @@
 from django.utils.translation import gettext_lazy as _ 
 from django.db import models 
 from django.conf import settings 
-from box.core.sw_solo.models import SingletonModel
+from sw_utils.sw_solo.models import SingletonModel
 from . import settings as liqpay_settings
 from django.conf import settings 
 
