@@ -9,22 +9,23 @@ from django.conf import settings
 class LiqpayConfig(SingletonModel):
   liqpay_public_key   = models.TextField(
     _("Публічний ключ"), blank=False,  null=False, 
-    default=settings.LIQPAY_PUBLIC_KEY,
+    # default=settings.LIQPAY_PUBLIC_KEY,
   )
   liqpay_private_key  = models.TextField(
     _("Приватний ключ"), blank=False,  null=False, 
-    default=settings.LIQPAY_PRIVATE_KEY,
+    # default=settings.LIQPAY_PRIVATE_KEY,
   )
   liqpay_sandbox_public_key   = models.TextField(
     _("Тестовий публічний ключ"), blank=False,  null=False, 
-    default=settings.LIQPAY_SANDBOX_PUBLIC_KEY,
+    # default=settings.LIQPAY_SANDBOX_PUBLIC_KEY,
   )
   liqpay_sandbox_private_key  = models.TextField(
     _("Тестовий приватний ключ"), blank=False,  null=False, 
-    default=settings.LIQPAY_SANDBOX_PRIVATE_KEY,
+    # default=settings.LIQPAY_SANDBOX_PRIVATE_KEY,
   )
   sandbox_mode = models.BooleanField(
-    verbose_name=_("Тестовий режим"), default=settings.LIQPAY_SANDBOX_MODE,
+    verbose_name=_("Тестовий режим"),
+    # default=settings.LIQPAY_SANDBOX_MODE,
   )
   
   @classmethod
